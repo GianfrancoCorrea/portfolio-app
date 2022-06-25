@@ -1,4 +1,4 @@
-import { Card } from 'component-library';
+import { Card } from '@gianjsx/component-library';
 import PropTypes from 'prop-types';
 import { capitalize } from '../helpers/helpers';
 import useImage from '../hooks/useImage';

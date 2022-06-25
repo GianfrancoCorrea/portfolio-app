@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Divider } from 'component-library';
+import { Button, Divider } from '@gianjsx/component-library';
 import './App.less';
 import Iframe from './components/Iframe';
 import { connect, L2_ORDER_BOOK, TICKER } from './helpers/backend';
@@ -23,6 +23,8 @@ function App() {
         setTokenPrices(prev => ({ ...prev, [symbol]: price }));
     };
 
+    // TODO: deploy component-library & run git push heroku master
+
     // get token pairs prices from websocket
     useEffect(() => {
         connect({
@@ -31,14 +33,6 @@ function App() {
             keepAlive       : true,
             keepAlivePeriod : 5000,
         }, handleTokensPrices);
-    }, []);
-
-    useEffect(() => {
-        console.log('mounted');
-
-        return () => {
-            console.log('unmounted');
-        };
     }, []);
 
     // get L2 orderbook from API

@@ -1,16 +1,14 @@
 import { createChart, CrosshairMode } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
-import priceData from '../helpers/data/priceData';
+import PropTypes from 'prop-types';
+// import priceData from '../helpers/data/priceData';
 import volumeData from '../helpers/data/volumeData';
 
 export default function Chart({ prices }) {
     const chartContainerRef = useRef();
     const chart = useRef();
     // const resizeObserver = useRef();
-    /*
-https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=21600
 
-*/
     useEffect(() => {
         chart.current = createChart(chartContainerRef.current, {
             width  : 1000,
@@ -99,3 +97,14 @@ https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&s
 
     );
 }
+
+Chart.propTypes = {
+    prices: PropTypes.arrayOf(PropTypes.shape({
+        time   : PropTypes.number.isRequired,
+        open   : PropTypes.number.isRequired,
+        high   : PropTypes.number.isRequired,
+        low    : PropTypes.number.isRequired,
+        close  : PropTypes.number.isRequired,
+        volume : PropTypes.number.isRequired,
+    })).isRequired,
+};
