@@ -7,10 +7,11 @@ import Orderbook from './components/Orderbook';
 import { apiGet } from './helpers/helpers';
 import TokenPairsCards from './components/TokenPairsCards';
 import getTokenPairs from './helpers/tokenPairs';
-import Chart from './Chart';
+import Chart from './components/Chart';
 
 function App() {
     const [L2, setL2] = useState(null);
+    const [btcPrices, setBtcPrices] = useState(null);
     const [tokenPrices, setTokenPrices] = useState({
         'BTC-USD' : 0,
         'ETH-USD' : 0,
@@ -55,7 +56,22 @@ function App() {
                 }));
             });
         }
-    }, [L2, tokenPrices]);
+        if (!btcPrices) {
+            // TODO: websocket for btc && volume handler
+            apiGet('https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=21600')
+                .then((res) => {
+                    const parsed = res.prices?.map((x => ({
+                        time   : x[0],
+                        open   : x[1].toString(),
+                        high   : x[2].toString(),
+                        low    : x[3].toString(),
+                        close  : x[4].toString(),
+                        volume : x[5].toString(),
+                    })));
+                    setBtcPrices(parsed);
+                });
+        }
+    }, [L2, tokenPrices, btcPrices]);
 
     const tokenPairs = getTokenPairs((pair) => tokenPrices[pair]);
 
@@ -73,7 +89,7 @@ function App() {
                     <Button secondary size={'large'}>Sell</Button>
                 </div>
                 <Divider />
-                <Chart />
+                {btcPrices ? <Chart prices={btcPrices} /> : null }
             </header>
         </div>
     );

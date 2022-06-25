@@ -1,13 +1,16 @@
 import { createChart, CrosshairMode } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
-import priceData from './helpers/data/priceData';
-import volumeData from './helpers/data/volumeData';
+import priceData from '../helpers/data/priceData';
+import volumeData from '../helpers/data/volumeData';
 
-export default function Chart() {
+export default function Chart({ prices }) {
     const chartContainerRef = useRef();
     const chart = useRef();
     // const resizeObserver = useRef();
+    /*
+https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=21600
 
+*/
     useEffect(() => {
         chart.current = createChart(chartContainerRef.current, {
             width  : 1000,
@@ -44,7 +47,7 @@ export default function Chart() {
             wickUpColor     : '#838ca1',
         });
 
-        candleSeries.setData(priceData);
+        candleSeries.setData(prices);
 
         // const areaSeries = chart.current.addAreaSeries({
         //   topColor: 'rgba(38,198,218, 0.56)',
