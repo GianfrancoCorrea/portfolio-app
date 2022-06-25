@@ -1,14 +1,16 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.less';
+import 'component-library/src/styles/global.less';
+
+/* eslint-disable */
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+/* eslint-enable */
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <App />,
 );
 
 // If you want to start measuring performance in your app, pass a function
