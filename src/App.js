@@ -26,7 +26,8 @@ function App() {
     // get token pairs prices from websocket
     useEffect(() => {
         connect({
-            url             : 'ws://localhost:8000',
+            url             : 'ws://quiet-plateau-12069.herokuapp.com',
+            // url             : 'ws://localhost:8000',
             keepAlive       : true,
             keepAlivePeriod : 5000,
         }, handleTokensPrices);
@@ -58,7 +59,7 @@ function App() {
         }
         if (!btcPrices) {
             // TODO: websocket for btc && volume handler
-            apiGet('https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=21600')
+            apiGet('https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=86400')
                 .then((res) => {
                     const parsed = res.prices?.map((x => ({
                         time   : x[0],
