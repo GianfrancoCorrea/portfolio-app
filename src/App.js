@@ -28,7 +28,7 @@ function App() {
     // get token pairs prices from websocket
     useEffect(() => {
         connect({
-            url             : 'ws://quiet-plateau-12069.herokuapp.com',
+            url             : 'wss://quiet-plateau-12069.herokuapp.com',
             // url             : 'ws://localhost:8000',
             keepAlive       : true,
             keepAlivePeriod : 5000,
