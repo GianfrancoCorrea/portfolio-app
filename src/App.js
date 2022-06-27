@@ -23,8 +23,6 @@ function App() {
         setTokenPrices(prev => ({ ...prev, [symbol]: price }));
     };
 
-    // TODO: deploy component-library & run git push heroku master
-
     // get token pairs prices from websocket
     useEffect(() => {
         connect({

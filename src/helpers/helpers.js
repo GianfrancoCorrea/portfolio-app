@@ -16,35 +16,30 @@ const parseOrders = (fixed, items) => {
     ));
 };
 
-const groupBy = (n, items) => {
-    const result = [];
-    const Orders = parseOrders(0, items);
-
-    Orders.forEach((a) => {
-        let price = parseFloat(a.price.toFixed(0));
-
-        const debt = price % n; // TODO: bug with number like: 1500 % 50 = 0 && 1500 % 500 = 0
-        if (debt > 0) {
-            price += (n - debt);
-        }
-
-        const samePrice = result.some(x => x.price === price)
-            ? result.find(x => x.price === price)
-            : false;
-
-        if (samePrice) {
-            samePrice.qty = parseFloat(parseFloat(samePrice.qty + a.qty).toFixed(2));
-            samePrice.total = a.total;
-        } else if (result.length <= 14) {
-            result.push({
-                ...a,
-                price,
+function groupByPrice(orderBook, n) {
+    const groupFind = (arrGroup, price) => arrGroup.find(item => item.price === price);
+    const group = [];
+    for (let i = 0; i < orderBook.length; i += 1) {
+        const groupPrice = Math.floor(orderBook[i].price / n) * n;
+        const groupItem = groupFind(group, groupPrice);
+        if (groupItem === undefined) {
+            group.push({
+                price : groupPrice,
+                qty   : orderBook[i].qty,
+                total : orderBook[i].total,
             });
-        }
-    });
+        } else {
+            const groupQty = parseFloat(groupItem?.qty || 0);
+            const groupTotal = parseFloat(groupItem?.total || 0);
+            const newQty = groupQty + orderBook[i].qty;
+            const newTotal = groupTotal + orderBook[i].qty;
 
-    return result;
-};
+            groupItem.qty = parseFloat(newQty.toFixed(2));
+            groupItem.total = parseFloat(newTotal.toFixed(2));
+        }
+    }
+    return group;
+}
 
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -67,4 +62,4 @@ const askStyle = (x, totalAsks) => ({
         rgba(231, 76, 60, 0.3) ${(x.total * 100) / totalAsks}%)`,
 });
 
-export { groupBy, capitalize, apiGet, bidStyle, askStyle };
+export { groupByPrice, capitalize, apiGet, bidStyle, askStyle, parseOrders };
