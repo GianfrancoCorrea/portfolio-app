@@ -4,14 +4,14 @@ import './App.less';
 import Iframe from './components/Iframe';
 import { connect, L2_ORDER_BOOK, TICKER } from './helpers/backend';
 import Orderbook from './components/Orderbook';
-import { apiGet } from './helpers/helpers';
+import { apiGet, handleChartData } from './helpers/helpers';
 import TokenPairsCards from './components/TokenPairsCards';
 import getTokenPairs from './helpers/tokenPairs';
 import Chart from './components/Chart';
 
 function App() {
     const [L2, setL2] = useState(null);
-    const [btcPrices, setBtcPrices] = useState(null);
+    const [chartData, setChartData] = useState(null);
     const [tokenPrices, setTokenPrices] = useState({
         'BTC-USD' : 0,
         'ETH-USD' : 0,
@@ -49,25 +49,17 @@ function App() {
                 }));
             });
         }
-        if (!btcPrices) {
-            // TODO: websocket for btc && volume handler
+        if (!chartData) {
+            // TODO: websocket for btc-usd
             apiGet('https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=86400')
                 .then((res) => {
-                    const parsed = res.prices?.map((x => ({
-                        time   : x[0],
-                        open   : x[1].toString(),
-                        high   : x[2].toString(),
-                        low    : x[3].toString(),
-                        close  : x[4].toString(),
-                        volume : x[5].toString(),
-                    })));
-                    setBtcPrices(parsed);
+                    setChartData(handleChartData(res.prices));
                 });
         }
-    }, [L2, tokenPrices, btcPrices]);
+    }, [L2, tokenPrices, chartData]);
 
     const tokenPairs = getTokenPairs((pair) => tokenPrices[pair]);
-
+    const { candleData, volumeData } = chartData || {};
     return (
         <div className="App">
             <header className="App-header">
@@ -82,7 +74,7 @@ function App() {
                     <Button secondary size={'large'}>Sell</Button>
                 </div>
                 <Divider />
-                {btcPrices ? <Chart prices={btcPrices} /> : null }
+                {candleData ? <Chart prices={candleData} volume={volumeData} /> : null }
             </header>
         </div>
     );

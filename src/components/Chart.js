@@ -1,10 +1,8 @@
 import { createChart, CrosshairMode } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-// import priceData from '../helpers/data/priceData';
-import volumeData from '../helpers/data/volumeData';
 
-export default function Chart({ prices }) {
+export default function Chart({ prices, volume: volumeData }) {
     const chartContainerRef = useRef();
     const chart = useRef();
     // const resizeObserver = useRef();
@@ -106,5 +104,9 @@ Chart.propTypes = {
         low    : PropTypes.number.isRequired,
         close  : PropTypes.number.isRequired,
         volume : PropTypes.number.isRequired,
+    })).isRequired,
+    volume: PropTypes.arrayOf(PropTypes.shape({
+        time  : PropTypes.number.isRequired,
+        value : PropTypes.number.isRequired,
     })).isRequired,
 };
