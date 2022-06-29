@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, Divider } from '@gianjsx/component-library';
+import { Button, Divider, PortfolioIntro } from '@gianjsx/component-library';
 import './App.less';
 import Iframe from './components/Iframe';
 import { connect, L2_ORDER_BOOK, TICKER } from './helpers/backend';
@@ -71,6 +71,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
+                <PortfolioIntro />
                 <TokenPairsCards tokenPairs={tokenPairs} />
                 <Divider />
                 <Iframe source="./build-sb/index.html" width="1000" height="1000" frameBorder="0" />
