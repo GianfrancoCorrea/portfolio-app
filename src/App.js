@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Button, Divider, PortfolioIntro } from '@gianjsx/component-library';
+import { Divider, PortfolioIntro } from '@gianjsx/component-library';
 import './App.less';
+import styled from 'styled-components';
+// import { IconsContainer } from '@gianjsx/component-library/src/PortfolioIntro/styles';
 import Iframe from './components/Iframe';
 import { connect, L2_ORDER_BOOK, TICKER } from './helpers/backend';
 import Orderbook from './components/Orderbook';
@@ -70,23 +72,220 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
-                <PortfolioIntro />
-                <TokenPairsCards tokenPairs={tokenPairs} />
-                <Divider />
-                <Iframe source="./build-sb/index.html" width="1000" height="1000" frameBorder="0" />
+            <PortfolioIntro />
+            <IframeSection>
+                <Iframe source="./build-sb/index.html" width="800" height="700" frameBorder="0" />
+                <div>
+                    <Title>
+                        Title
+                    </Title>
+                    <Description>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec euismod, nisl eget consectetur sagittis,
+                        nisl nunc consectetur nisi, euismod consectetur
+                        nisi nisl eget consectetur sagittis.
+                    </Description>
+
+                </div>
+            </IframeSection>
+            <TokenPairsCards tokenPairs={tokenPairs} />
+            <BlockchainSection>
                 <Divider />
                 {L2 ? <Orderbook orders={L2} /> : null }
                 <Divider />
-                <div className="test-buttons">
-                    <Button primary size={'large'}>Buy</Button>
-                    <Button secondary size={'large'}>Sell</Button>
+                <div className="info">
+                    <Title>
+                        Blockchain data (API & WebSockets)
+                    </Title>
+                    <Description>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec euismod, nisl eget consectetur sagittis,
+                        nisl nunc consectetur nisi, euismod consectetur
+                        nisi nisl eget consectetur sagittis.
+                    </Description>
+                    <div>
+                        🙄🙄😣😮
+                    </div>
                 </div>
                 <Divider />
+            </BlockchainSection>
+            <ChartSection>
                 {btcPrices ? <Chart prices={btcPrices} /> : null }
-            </header>
+                <div className="info">
+                    <Title>
+                        Charts
+                    </Title>
+                    <Description>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Donec euismod, nisl eget consectetur sagittis,
+                        nisl nunc consectetur nisi, euismod consectetur
+                        nisi nisl eget consectetur sagittis.
+                    </Description>
+                </div>
+            </ChartSection>
+            <ContactSection>
+                <div>
+                    <Title>
+                        Get in touch
+                    </Title>
+                    <Description>
+                        Let&apos;s talk about everything!
+                        <br />
+                        Don&apos;t like forms? Send me an email. 👋
+                    </Description>
+                </div>
+                <GetInTouchForm>
+                    <div>
+                        <input type="text" className="input" placeholder="Name" />
+                        <input type="email" className="input" placeholder="Email" />
+                        <textarea placeholder="Message" />
+                        <button type="button" className="button">Send</button>
+                    </div>
+                </GetInTouchForm>
+            </ContactSection>
         </div>
     );
 }
 
 export default App;
+
+const IframeSection = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #444B58;
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    div {
+        width: 30%;
+        height: 75%
+    }
+`;
+
+const Title = styled.h1`
+    font-size: 2em;
+    color: white;
+    text-align: center;
+`;
+
+const Description = styled.p`
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+   -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+`;
+
+const BlockchainSection = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #444B58b8;
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    .info {
+        display: flex;
+        width: 30%;
+        height: 75%;
+        flex-direction: column;
+        justify-content: center;
+    }
+`;
+
+const ChartSection = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    /* background-color: #444B58; */
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    .info {
+        display: flex;
+        width: 30%;
+        height: 75%;
+        flex-direction: column;
+        justify-content: center;
+    }
+`;
+
+const ContactSection = styled.section`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #444B58c1;
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+    `;
+
+const GetInTouchForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* input styles */
+    .input {
+        width: 50%;
+        height: 50px;
+        border: 1px solid #444B58;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.5em;
+        color: white;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: #3D4450;
+    }
+    /* button styles */
+    .button {
+        width: 50%;
+        height: 50px;
+        border: 1px solid #444B58;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.5em;
+        color: white;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: #3D4450;
+    }
+    textarea {
+        width: 50%;
+        height: 50px;
+        border: 1px solid #444B58;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 1.5em;
+        color: white;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        background-color: #3D4450;
+    }
+    
+
+    `;

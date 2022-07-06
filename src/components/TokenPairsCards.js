@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import PriceCard from './PriceCard';
+import { PriceCard } from '@gianjsx/component-library';
 
 function TokenPairsCards({ tokenPairs }) {
     return (
