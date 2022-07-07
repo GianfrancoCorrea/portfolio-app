@@ -20,6 +20,7 @@ function Orderbook({ orders: { bids, asks } }) {
 
     useEffect(() => {
         if (bids && asks) {
+            console.log('%c 🍜 bids: ', 'font-size:12px;background-color: #EA7E5C;color:#fff;', bids);
             handleGroupByPrice(50);
         }
     }, [bids, asks, handleGroupByPrice]);
@@ -101,14 +102,12 @@ export default Orderbook;
 Orderbook.propTypes = {
     orders: PropTypes.shape({
         bids: PropTypes.arrayOf(PropTypes.shape({
-            price : PropTypes.number.isRequired,
-            qty   : PropTypes.number.isRequired,
-            total : PropTypes.number.isRequired,
+            px  : PropTypes.number.isRequired,
+            qty : PropTypes.number.isRequired,
         })).isRequired,
         asks: PropTypes.arrayOf(PropTypes.shape({
-            price : PropTypes.number.isRequired,
-            qty   : PropTypes.number.isRequired,
-            total : PropTypes.number.isRequired,
+            px  : PropTypes.number.isRequired,
+            qty : PropTypes.number.isRequired,
         })).isRequired,
     }).isRequired,
 };

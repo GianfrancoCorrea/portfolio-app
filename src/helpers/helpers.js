@@ -62,4 +62,22 @@ const askStyle = (x, totalAsks) => ({
         rgba(231, 76, 60, 0.3) ${(x.total * 100) / totalAsks}%)`,
 });
 
-export { groupByPrice, capitalize, apiGet, bidStyle, askStyle, parseOrders };
+const parseBtcPrices = (prices) => {
+    const btcPrices = prices.map((price) => ({
+        time   : price[0],
+        open   : price[1],
+        high   : price[2],
+        low    : price[3],
+        close  : price[4],
+        volume : price[5],
+    }));
+    return btcPrices;
+};
+
+const getBtcPrices = () => apiGet('https://api.blockchain.com/nabu-gateway/markets/exchange/prices?symbol=BTC-USD&start=1625054117000&end=1656158177000&granularity=86400')
+    .then((res) => {
+        const parsed = parseBtcPrices(res.prices);
+        return parsed;
+    });
+
+export { groupByPrice, capitalize, apiGet, bidStyle, askStyle, parseOrders, getBtcPrices };
