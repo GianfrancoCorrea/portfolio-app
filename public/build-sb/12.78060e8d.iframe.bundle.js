@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[12],{"./assets/images/ethereum.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/ethereum.71409071.svg"}}]);

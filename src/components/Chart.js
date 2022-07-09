@@ -2,11 +2,13 @@ import { createChart, CrosshairMode } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 // import priceData from '../helpers/data/priceData';
+import { useTheme } from 'styled-components';
 import volumeData from '../helpers/data/volumeData';
 
 export default function Chart({ prices }) {
     const chartContainerRef = useRef();
     const chart = useRef();
+    const theme = useTheme();
     // const resizeObserver = useRef();
 
     useEffect(() => {
@@ -14,8 +16,8 @@ export default function Chart({ prices }) {
             width  : 1000,
             height : 500, // "300px", //chartContainerRef.current.clientHeight,
             layout : {
-                backgroundColor : '#2F2F2F',
-                textColor       : 'rgba(255, 255, 255, 0.9)',
+                backgroundColor : theme.background,
+                textColor       : theme.text,
             },
             grid: {
                 vertLines: {

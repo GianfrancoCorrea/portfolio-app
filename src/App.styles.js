@@ -41,7 +41,8 @@ const GetInTouchForm = styled.form`
     .input {
         width: 50%;
         height: 50px;
-        border: 1px solid #444B58;
+        border: 1px solid;
+        border-color: ${props => props.theme.toggleBorder};
         border-radius: 5px;
         padding: 10px;
         margin: 10px;
@@ -51,7 +52,7 @@ const GetInTouchForm = styled.form`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background-color: #3D4450;
+        background: ${props => props.theme.background};
     }
     /* button styles */
     .button {
@@ -67,12 +68,14 @@ const GetInTouchForm = styled.form`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background-color: #3D4450;
+        background: ${props => props.theme.background};
+        border-color: ${props => props.theme.toggleBorder};
     }
     textarea {
         width: 50%;
         height: 50px;
         border: 1px solid #444B58;
+        border-color: ${props => props.theme.toggleBorder};
         border-radius: 5px;
         padding: 10px;
         margin: 10px;
@@ -82,7 +85,7 @@ const GetInTouchForm = styled.form`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background-color: #3D4450;
+        background: ${props => props.theme.background};
     }
     `;
 

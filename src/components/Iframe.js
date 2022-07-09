@@ -5,11 +5,7 @@ function Iframe({ source, width, height }) { // eslint-disable-line
 
     const src = source;
     return (
-        <div>
-            <div>
-                <iframe title="iframe" src={src} width={width} height={height} frameBorder="0" />
-            </div>
-        </div>
+        <iframe title="iframe" src={src} width={width} height={height} frameBorder="0" />
     );
 }
 

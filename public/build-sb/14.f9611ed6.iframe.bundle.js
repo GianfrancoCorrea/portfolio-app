@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[14],{"./assets/images/litecoin1.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/litecoin1.0db1aa80.svg"}}]);

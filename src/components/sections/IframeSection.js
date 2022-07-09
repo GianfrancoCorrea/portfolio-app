@@ -5,6 +5,7 @@ import Iframe from '../Iframe';
 function IframeSection() {
     return (
         <IframeSectionContainer>
+            <div />
             <Iframe source="./build-sb/index.html" width="800" height="700" frameBorder="0" />
             <div>
                 <Title>
@@ -18,6 +19,7 @@ function IframeSection() {
                 </Description>
 
             </div>
+            <div />
         </IframeSectionContainer>
     );
 }
@@ -25,14 +27,13 @@ function IframeSection() {
 export default IframeSection;
 
 const IframeSectionContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 6fr 4fr 1fr;
+    grid-gap: 1em;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
-    background-color: #444B58c1;
+    /* background-color: #444B58c1; */
     opacity: 1;
     font-family: 'Rubik', sans-serif;
     `;

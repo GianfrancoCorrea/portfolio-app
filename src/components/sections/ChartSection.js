@@ -17,7 +17,7 @@ function ChartSection() {
 
     return (
         <ChartSectionContainer>
-            {btcPrices ? <Chart prices={btcPrices} /> : null }
+            <div />
             <div className="info">
                 <Title>
                     Charts
@@ -29,27 +29,21 @@ function ChartSection() {
                     nisi nisl eget consectetur sagittis.
                 </Description>
             </div>
+            {btcPrices ? <Chart prices={btcPrices} /> : null }
+            <div />
         </ChartSectionContainer>
     );
 }
 export default ChartSection;
 
 const ChartSectionContainer = styled.section`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 4fr 6fr 1fr;
+    grid-gap: 1em;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
-    /* background-color: #444B58; */
     opacity: 1;
     font-family: 'Rubik', sans-serif;
-    .info {
-        display: flex;
-        width: 30%;
-        height: 75%;
-        flex-direction: column;
-        justify-content: center;
-    }
+
 `;

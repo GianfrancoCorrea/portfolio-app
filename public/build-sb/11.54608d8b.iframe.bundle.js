@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{"./assets/images/bitcoin.svg":function(module,exports,__webpack_require__){module.exports=__webpack_require__.p+"static/media/bitcoin.0b92dbae.svg"}}]);

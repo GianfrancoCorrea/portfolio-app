@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { iconList, styles } from '@gianjsx/component-library/dist/esm/helpers';
+import { iconList } from '@gianjsx/component-library/dist/esm/helpers';
+import * as styles from '@gianjsx/component-library/dist/esm/styles';
 import Orderbook from '../Orderbook';
 import { Description, Title } from '../../App.styles';
 import TokenPairsCards from '../TokenPairsCards';
@@ -9,23 +10,15 @@ import { connect, L2_ORDER_BOOK, TICKER } from '../../helpers/backend';
 import getTokenPairs from '../../helpers/tokenPairs';
 
 const BlockchainSectionContainer = styled.section`
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-around;
-height: 100vh;
-width: 100vw;
-overflow: hidden;
-background-color: #444B58b8;
-opacity: 1;
-font-family: 'Rubik', sans-serif;
-.info {
-    display: flex;
-    width: 30%;
-    height: 75%;
-    flex-direction: column;
-    justify-content: center;
-}
+   display: grid;
+    grid-template-columns: 1fr 6fr 4fr 1fr;
+    grid-gap: 1em;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+    font-family: 'Rubik', sans-serif;
+
 `;
 
 function BackchainDataIcons() {
@@ -35,13 +28,14 @@ function BackchainDataIcons() {
     } = iconList;
     useEffect(() => {
         if (!icons.length) {
+            // const used = tecnologies.filter(tech => tech.name === 'Blockchain');
             setIcons(tecnologies);
         }
     }, [icons, setIcons, tecnologies]);
     return (
         <styles.IconsContainer>
-            {icons.map((icon, i) => (
-                <icon.icon key={`key_${i}`} /> // eslint-disable-line react/no-array-index-key
+            {icons.map((icon) => (
+                <icon.icon key={`key_${icon.name}`} />
             ))}
         </styles.IconsContainer>
     );
@@ -92,6 +86,7 @@ function BlockchainSection() {
         <>
             <TokenPairsCards tokenPairs={tokenPairs} />
             <BlockchainSectionContainer>
+                <div />
                 {L2 ? <Orderbook orders={L2} /> : null }
                 {/* <Divider /> */}
                 <div className="info">
@@ -108,6 +103,7 @@ function BlockchainSection() {
                         <BackchainDataIcons />
                     </div>
                 </div>
+                <div />
             </BlockchainSectionContainer>
         </>
     );
