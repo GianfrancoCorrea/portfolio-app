@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
+import { HeroContainer } from '@gianjsx/component-library/dist/esm/styles';
 import { Title, Description } from './App.styles';
 
 const useTypingTextStyles = css`
@@ -61,6 +62,9 @@ export const GlobalStyles = createGlobalStyle`
   }
   p {
     color: ${({ theme }) => theme.text}!important;
+  }
+  ${HeroContainer} {
+    overflow: hidden;
   }
 
  ${useTypingTextStyles}
