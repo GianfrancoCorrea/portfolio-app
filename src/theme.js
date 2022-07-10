@@ -53,6 +53,16 @@ export const GlobalStyles = createGlobalStyle`
   ${Description} {
     color: ${({ theme }) => theme.text};
   }
+  h1 {
+    color: ${({ theme }) => theme.text}!important;
+  }
+  h2 {
+    color: ${({ theme }) => theme.text}!important;
+  }
+  p {
+    color: ${({ theme }) => theme.text}!important;
+  }
+
  ${useTypingTextStyles}
 `;
 export const lightTheme = {
