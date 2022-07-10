@@ -13,7 +13,7 @@ export default function Chart({ prices }) {
 
     useEffect(() => {
         chart.current = createChart(chartContainerRef.current, {
-            width  : 1000,
+            width  : 900,
             height : 500, // "300px", //chartContainerRef.current.clientHeight,
             layout : {
                 backgroundColor : theme.background,
@@ -94,7 +94,7 @@ export default function Chart({ prices }) {
         <div
             ref={chartContainerRef}
             className="chart-container"
-            // style={{ height: "100%" }}
+            style={{ width: '100%' }}
         />
 
     );

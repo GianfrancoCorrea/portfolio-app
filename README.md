@@ -77,3 +77,4 @@ npm link ../app-portfolio/node_modules/styled-components
 
 https://medium.com/rd-shipit/advanced-ways-to-write-styled-components-97ce210404e3
 https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a  
+https://medium.com/@josh.j.pearson/handling-iframe-loading-in-react-57f044a9d0fa

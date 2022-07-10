@@ -4,6 +4,7 @@ import { Description, GetInTouchForm, Title } from '../../App.styles';
 function ContactSection() {
     return (
         <ContactSectionContainer>
+            <div />
             <GetInTouchForm>
                 <div>
                     <input type="text" className="input" placeholder="Name" />
@@ -22,6 +23,7 @@ function ContactSection() {
                     Don&apos;t like forms? Send me an email. 👋
                 </Description>
             </div>
+            <div />
         </ContactSectionContainer>
     );
 }
@@ -29,12 +31,12 @@ function ContactSection() {
 export default ContactSection;
 
 const ContactSectionContainer = styled.section`
-    display: flex;
-    flex-direction: row;
+   display: grid;
+    grid-template-columns: 1fr 4fr 6fr 1fr;
+    grid-gap: 1em;
     align-items: center;
-    justify-content: space-around;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
     /* background-color: #444B58c1; */
     opacity: 1;

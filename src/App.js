@@ -29,7 +29,7 @@ function App() {
             <>
                 <GlobalStyles />
                 <div className="App">
-                    <div>
+                    <div style={{ position: 'fixed', top: 0, right: 0, zIndex: 10 }}>
                         <button type="button" onClick={toggleTheme}>
                             {isDarkTheme
                                 ? <span aria-label="Light mode" role="img">🌞</span>

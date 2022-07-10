@@ -13,6 +13,8 @@ const BlockchainSectionContainer = styled.section`
    display: grid;
     grid-template-columns: 1fr 6fr 4fr 1fr;
     grid-gap: 1em;
+    align-items: center;
+
     height: 100vh;
     width: 100%;
     overflow: hidden;

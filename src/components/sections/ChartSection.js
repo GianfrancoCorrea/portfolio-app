@@ -40,6 +40,8 @@ const ChartSectionContainer = styled.section`
     display: grid;
     grid-template-columns: 1fr 4fr 6fr 1fr;
     grid-gap: 1em;
+    align-items: center;
+
     height: 100vh;
     width: 100%;
     overflow: hidden;

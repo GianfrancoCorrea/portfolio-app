@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import { Title, Description } from './App.styles';
 
 const useTypingTextStyles = css`
