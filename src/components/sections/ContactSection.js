@@ -32,12 +32,11 @@ function ContactSection() {
 
 export default ContactSection;
 
-const ContactSectionContainer = styled.section`
+const ContactSectionContainer = styled.div`
    display: grid;
     grid-template-columns: 1fr 4fr 6fr 1fr;
     grid-gap: 1em;
     align-items: center;
-    height: 100vh;
     width: 100%;
     opacity: 1;
     `;

@@ -30,7 +30,7 @@ function IframeSection() {
 
 export default IframeSection;
 
-const IframeSectionContainer = styled.section`
+const IframeSectionContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-gap: 40px;

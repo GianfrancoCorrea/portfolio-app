@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-const IframeSection = styled.section`
+const IframeSection = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    height: 100vh;
     width: 100%;
     opacity: 1;
     div {
@@ -15,19 +14,17 @@ const IframeSection = styled.section`
 `;
 
 const Inverted = styled.div`
-    display: flex;
-    justify-content: center;
-    width: 100vw;
+    display: block;
 `;
 
-const Title = styled.h1`
-    font-size: 2em;
-    text-align: center;
+const Title = styled.div`
+font-weight: 900;
+    font-size: 45px;
+    line-height: 1;
+    margin-bottom: 30px;
 `;
 
 const Description = styled.p`
-    font-size: 1.5em;
-    text-align: center;
    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;

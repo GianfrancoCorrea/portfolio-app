@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { PortfolioIntro } from '@gianjsx/component-library';
+import { SectionContainer, SectionWrapper } from '@gianjsx/component-library/src/styles/index';
 import { ThemeProvider } from 'styled-components';
 import BlockchainSection from './components/sections/BlockchainSection';
 import ChartSection from './components/sections/ChartSection';
@@ -29,17 +30,19 @@ function App() {
             <>
                 <GlobalStyles />
                 <div className="App">
-                    <div style={{ position: 'fixed', top: 0, right: 0, zIndex: 10 }}>
-                        <button type="button" onClick={toggleTheme}>
-                            {isDarkTheme
-                                ? <span aria-label="Light mode" role="img">🌞</span>
-                                : <span aria-label="Dark mode" role="img">🌜</span>}
-                        </button>
-                    </div>
+                    <button type="button" onClick={toggleTheme}>
+                        {isDarkTheme
+                            ? <span aria-label="Light mode" role="img">🌞</span>
+                            : <span aria-label="Dark mode" role="img">🌜</span>}
+                    </button>
                     <PortfolioIntro />
-                    <IframeSection />
-                    <BlockchainSection />
-                    <ChartSection />
+                    <SectionContainer>
+                        <SectionWrapper>
+                            <IframeSection />
+                            <BlockchainSection />
+                            <ChartSection />
+                        </SectionWrapper>
+                    </SectionContainer>
                     <ContactSection />
                 </div>
             </>
