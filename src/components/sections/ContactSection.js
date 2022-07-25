@@ -1,30 +1,32 @@
 import styled from 'styled-components';
-import { Description, GetInTouchForm, Title } from '../../App.styles';
+import { Description, GetInTouchForm, Title, Inverted } from '../../App.styles';
 
 function ContactSection() {
     return (
-        <ContactSectionContainer>
-            <div />
-            <GetInTouchForm>
+        <Inverted>
+            <ContactSectionContainer>
+                <div />
+                <GetInTouchForm>
+                    <div>
+                        <input type="text" className="input" placeholder="Name" />
+                        <input type="email" className="input" placeholder="Email" />
+                        <textarea placeholder="Message" />
+                        <button type="button" className="button">Send</button>
+                    </div>
+                </GetInTouchForm>
                 <div>
-                    <input type="text" className="input" placeholder="Name" />
-                    <input type="email" className="input" placeholder="Email" />
-                    <textarea placeholder="Message" />
-                    <button type="button" className="button">Send</button>
+                    <Title>
+                        Get in touch
+                    </Title>
+                    <Description>
+                        Let&apos;s talk about everything!
+                        <br />
+                        Don&apos;t like forms? Send me an email. 👋
+                    </Description>
                 </div>
-            </GetInTouchForm>
-            <div>
-                <Title>
-                    Get in touch
-                </Title>
-                <Description>
-                    Let&apos;s talk about everything!
-                    <br />
-                    Don&apos;t like forms? Send me an email. 👋
-                </Description>
-            </div>
-            <div />
-        </ContactSectionContainer>
+                <div />
+            </ContactSectionContainer>
+        </Inverted>
     );
 }
 
@@ -37,8 +39,5 @@ const ContactSectionContainer = styled.section`
     align-items: center;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
-    /* background-color: #444B58c1; */
     opacity: 1;
-    font-family: 'Rubik', sans-serif;
     `;

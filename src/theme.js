@@ -1,14 +1,11 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { HeroContainer } from '@gianjsx/component-library/dist/esm/styles';
-import { Title, Description } from './App.styles';
+import { Inverted } from './App.styles';
 
 const useTypingTextStyles = css`
-.word {
-  display: block;
-}
+
 
 .word span {
-  color: #fd82aa;
+  color: #38FF58;
   position: relative;
 }
 
@@ -43,41 +40,22 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: all 0.2s ease-in, color 0.2s ease-in;
   }
-  section {
-    background-color: ${({ theme }) => theme.body};
-    color: ${({ theme }) => theme.text};
-    transition: all 0.5s ease-in, color 0.2s ease-in;
-  }
-  ${Title} {
-    color: ${({ theme }) => theme.text};
-  }
-  ${Description} {
-    color: ${({ theme }) => theme.text};
-  }
-  h1 {
-    color: ${({ theme }) => theme.text}!important;
-  }
-  h2 {
-    color: ${({ theme }) => theme.text}!important;
-  }
-  p {
-    color: ${({ theme }) => theme.text}!important;
-  }
-  ${HeroContainer} {
-    overflow: hidden;
+  ${Inverted} {
+    background-color: ${({ theme }) => theme.bodyInverted};
+    color: ${({ theme }) => theme.textInverted};
   }
 
  ${useTypingTextStyles}
 `;
 export const lightTheme = {
-    body         : '#FAFAFA',
-    text         : '#363537',
-    toggleBorder : '#FFF',
-    background   : '#363537',
+    body         : '#f4f4f4',
+    text         : '#222222',
+    bodyInverted : '#222222',
+    textInverted : '#ffffff',
 };
 export const darkTheme = {
-    body         : '#363537',
-    text         : '#FAFAFA',
-    toggleBorder : '#6B8096',
-    background   : '#999',
+    body         : '#222222',
+    text         : '#ffffff',
+    bodyInverted : '#f4f4f4',
+    textInverted : '#222222',
 };

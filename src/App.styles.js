@@ -6,26 +6,27 @@ const IframeSection = styled.section`
     align-items: center;
     justify-content: space-around;
     height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    background-color: #444B58;
+    width: 100%;
     opacity: 1;
-    font-family: 'Rubik', sans-serif;
     div {
         width: 30%;
         height: 75%
     }
 `;
 
+const Inverted = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+`;
+
 const Title = styled.h1`
     font-size: 2em;
-    color: white;
     text-align: center;
 `;
 
 const Description = styled.p`
     font-size: 1.5em;
-    color: white;
     text-align: center;
    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -42,51 +43,40 @@ const GetInTouchForm = styled.form`
         width: 50%;
         height: 50px;
         border: 1px solid;
-        border-color: ${props => props.theme.toggleBorder};
         border-radius: 5px;
         padding: 10px;
         margin: 10px;
         font-size: 1.5em;
-        color: white;
         text-align: center;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background: ${props => props.theme.background};
     }
     /* button styles */
     .button {
         width: 50%;
         height: 50px;
-        border: 1px solid #444B58;
         border-radius: 5px;
         padding: 10px;
         margin: 10px;
         font-size: 1.5em;
-        color: white;
         text-align: center;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background: ${props => props.theme.background};
-        border-color: ${props => props.theme.toggleBorder};
     }
     textarea {
         width: 50%;
         height: 50px;
-        border: 1px solid #444B58;
-        border-color: ${props => props.theme.toggleBorder};
         border-radius: 5px;
         padding: 10px;
         margin: 10px;
         font-size: 1.5em;
-        color: white;
         text-align: center;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-        background: ${props => props.theme.background};
     }
     `;
 
-export { IframeSection, Title, Description, GetInTouchForm };
+export { IframeSection, Title, Description, GetInTouchForm, Inverted };

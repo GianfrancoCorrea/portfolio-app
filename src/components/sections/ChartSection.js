@@ -44,8 +44,6 @@ const ChartSectionContainer = styled.section`
 
     height: 100vh;
     width: 100%;
-    overflow: hidden;
     opacity: 1;
-    font-family: 'Rubik', sans-serif;
 
 `;

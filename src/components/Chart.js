@@ -16,8 +16,7 @@ export default function Chart({ prices }) {
             width  : 900,
             height : 500, // "300px", //chartContainerRef.current.clientHeight,
             layout : {
-                backgroundColor : theme.background,
-                textColor       : theme.text,
+                textColor: theme.text,
             },
             grid: {
                 vertLines: {
