@@ -63,27 +63,13 @@ const GetInTouchForm = styled.form`
     }
     `;
 
-const IframeSectionGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 40px;
-    align-items: center;
-`;
-
 const ContactSectionContainer = styled.div`
-   width: 100%;
+   display: grid;
+    grid-template-columns: 1fr 4fr 6fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
+    width: 100%;
+    opacity: 1;
     `;
 
-const ContactSectionGrid = styled.div`
-display: grid;
- grid-template-columns: 1fr 4fr 6fr 1fr;
- grid-gap: 1em;
- align-items: center;
- width: 100%;
- opacity: 1;
- `;
-
-export {
-    IframeSectionGrid, Title, Description, GetInTouchForm,
-    IframeSectionContainer, ContactSectionContainer, ContactSectionGrid,
-};
+export { Title, Description, GetInTouchForm, ContactSectionContainer, IframeSectionContainer };

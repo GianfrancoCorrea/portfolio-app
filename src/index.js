@@ -1,5 +1,4 @@
 import ReactDOM from 'react-dom/client';
-import './index.less';
 import '@gianjsx/component-library/src/styles/global.less';
 
 /* eslint-disable */
