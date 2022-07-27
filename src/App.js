@@ -36,9 +36,9 @@ function App() {
                             : <span aria-label="Dark mode" role="img">🌜</span>}
                     </button>
                     <PortfolioIntro />
-                    <SectionContainer>
-                        <SectionWrapper>
-                            <IframeSection />
+                    <IframeSection />
+                    <SectionContainer className="SectionContainer in App.js">
+                        <SectionWrapper className="SectionWrapper in App.js">
                             <BlockchainSection />
                             <ChartSection />
                         </SectionWrapper>

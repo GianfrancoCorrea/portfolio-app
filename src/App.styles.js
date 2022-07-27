@@ -1,20 +1,7 @@
 import styled from 'styled-components';
 
-const IframeSection = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+const IframeSectionContainer = styled.div`
     width: 100%;
-    opacity: 1;
-    div {
-        width: 30%;
-        height: 75%
-    }
-`;
-
-const Inverted = styled.div`
-    display: block;
 `;
 
 const Title = styled.div`
@@ -76,4 +63,27 @@ const GetInTouchForm = styled.form`
     }
     `;
 
-export { IframeSection, Title, Description, GetInTouchForm, Inverted };
+const IframeSectionGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 40px;
+    align-items: center;
+`;
+
+const ContactSectionContainer = styled.div`
+   width: 100%;
+    `;
+
+const ContactSectionGrid = styled.div`
+display: grid;
+ grid-template-columns: 1fr 4fr 6fr 1fr;
+ grid-gap: 1em;
+ align-items: center;
+ width: 100%;
+ opacity: 1;
+ `;
+
+export {
+    IframeSectionGrid, Title, Description, GetInTouchForm,
+    IframeSectionContainer, ContactSectionContainer, ContactSectionGrid,
+};

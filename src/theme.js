@@ -1,9 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { Inverted } from './App.styles';
+import { IframeSectionContainer, ContactSectionContainer } from './App.styles';
 
 const useTypingTextStyles = css`
-
-
 .word span {
   color: #38FF58;
   position: relative;
@@ -12,12 +10,12 @@ const useTypingTextStyles = css`
 .word span::after {
   content: "";
   width: 2px;
-  height: 100%;
+  height: 80%;
   background: white;
   display: block;
   position: absolute;
   right: -4px;
-  top: 0;
+  top: 10%;
   animation: blink 1s infinite alternate;
 }
 
@@ -40,12 +38,12 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: all 0.2s ease-in, color 0.2s ease-in;
   }
-  ${Inverted} {
+  ${IframeSectionContainer},
+  ${ContactSectionContainer} {
     background-color: ${({ theme }) => theme.bodyInverted};
     color: ${({ theme }) => theme.textInverted};
   }
-
- ${useTypingTextStyles}
+  ${useTypingTextStyles}
 `;
 export const lightTheme = {
     body         : '#f4f4f4',

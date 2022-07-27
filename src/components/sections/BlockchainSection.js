@@ -81,7 +81,7 @@ function BlockchainSection() {
     return (
         <>
             <TokenPairsCards tokenPairs={tokenPairs} />
-            <BlockchainSectionContainer>
+            <BlockchainSectionContainer className="BlockchainSectionContainer">
 
                 {L2 ? <Orderbook orders={L2} /> : <div /> }
 
