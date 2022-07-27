@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
-import { PortfolioIntro } from '@gianjsx/component-library';
-import { SectionContainer, SectionWrapper } from '@gianjsx/component-library/src/styles/index';
 import { ThemeProvider } from 'styled-components';
+import { SectionContainer, SectionWrapper } from './App.styles';
 import BlockchainSection from './components/sections/BlockchainSection';
 import ChartSection from './components/sections/ChartSection';
 import ContactSection from './components/sections/ContactSection';
 import IframeSection from './components/sections/IframeSection';
-import './App.less';
+import IntroSection from './components/sections/IntroSection';
 import { lightTheme, darkTheme, GlobalStyles } from './theme';
+import './App.less';
 
 function App() {
     const [theme, setTheme] = useState('dark');
@@ -35,7 +35,7 @@ function App() {
                             ? <span aria-label="Light mode" role="img">🌞</span>
                             : <span aria-label="Dark mode" role="img">🌜</span>}
                     </button>
-                    <PortfolioIntro />
+                    <IntroSection />
                     <IframeSection />
                     <SectionContainer className="SectionContainer in App.js">
                         <SectionWrapper className="SectionWrapper in App.js">

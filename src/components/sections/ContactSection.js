@@ -1,5 +1,7 @@
-import { SectionContainer, SectionWrapper } from '@gianjsx/component-library/src/styles';
-import { Description, GetInTouchForm, Title, ContactSectionContainer, ContactSectionGrid } from '../../App.styles';
+import {
+    SectionContainer, SectionWrapper, Description, GetInTouchForm,
+    Title, ContactSectionContainer, ContactSectionGrid,
+} from '../../App.styles';
 
 function ContactSection() {
     return (

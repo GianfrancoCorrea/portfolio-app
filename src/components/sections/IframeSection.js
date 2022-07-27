@@ -1,5 +1,7 @@
-import { SectionContainer, SectionWrapper } from '@gianjsx/component-library/dist/esm/styles';
-import { Title, Description, IframeSectionGrid, IframeSectionContainer } from '../../App.styles';
+import {
+    Title, Description, IframeSectionGrid, IframeSectionContainer, SectionContainer,
+    SectionWrapper,
+} from '../../App.styles';
 import Iframe from '../Iframe';
 
 function IframeSection() {
