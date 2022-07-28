@@ -71,8 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ## Local library configuration
-npm link ../app-portfolio/node_modules/react --legacy-peer-deps
-npm link ../app-portfolio/node_modules/styled-components
+npm link ../app-portfolio/node_modules/react --legacy-peer-deps link ../app-portfolio/node_modules/styled-components
 
 
 https://medium.com/rd-shipit/advanced-ways-to-write-styled-components-97ce210404e3
