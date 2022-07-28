@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { SectionContainer, SectionWrapper } from './App.styles';
-import BlockchainSection from './components/sections/BlockchainSection';
-import ChartSection from './components/sections/ChartSection';
+import CryptosSection from './components/sections/CryptosSection';
 import ContactSection from './components/sections/ContactSection';
-import IframeSection from './components/sections/IframeSection';
+import ComponentsLibrarySection from './components/sections/ComponentsLibrarySection';
 import IntroSection from './components/sections/IntroSection';
 import { lightTheme, darkTheme, GlobalStyles } from './theme';
 import './App.less';
@@ -29,22 +27,15 @@ function App() {
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <>
                 <GlobalStyles />
-                <div className="App">
-                    <button type="button" onClick={toggleTheme}>
-                        {isDarkTheme
-                            ? <span aria-label="Light mode" role="img">🌞</span>
-                            : <span aria-label="Dark mode" role="img">🌜</span>}
-                    </button>
-                    <IntroSection />
-                    <IframeSection />
-                    <SectionContainer className="SectionContainer in App.js">
-                        <SectionWrapper className="SectionWrapper in App.js">
-                            <BlockchainSection />
-                            <ChartSection />
-                        </SectionWrapper>
-                    </SectionContainer>
-                    <ContactSection />
-                </div>
+                <button type="button" onClick={toggleTheme}>
+                    {isDarkTheme
+                        ? <span aria-label="Light mode" role="img">🌞</span>
+                        : <span aria-label="Dark mode" role="img">🌜</span>}
+                </button>
+                <IntroSection />
+                <ComponentsLibrarySection />
+                <CryptosSection />
+                <ContactSection />
             </>
         </ThemeProvider>
     );

@@ -17,16 +17,13 @@ animation: fadeIn 0.5s ease-in-out;
     }
 }
 `;
+
 const SectionWrapper = styled.div`
     width: 100%;
     max-width: 1200px;
     box-sizing: border-box;
     padding: 0 20px;
     text-align: left;
-`;
-
-const IframeSectionContainer = styled.div`
-    width: 100%;
 `;
 
 const Title = styled.div`
@@ -88,13 +85,6 @@ const GetInTouchForm = styled.form`
     }
     `;
 
-const IframeSectionGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 40px;
-    align-items: center;
-`;
-
 const ContactSectionContainer = styled.div`
    width: 100%;
     `;
@@ -108,8 +98,17 @@ display: grid;
  opacity: 1;
  `;
 
+const ComponentsLibraryContainer = styled.div`
+margin-top: 80px;
+   ${SectionContainer} {
+    padding: 0;
+}
+
+
+ `;
+
 export {
-    IframeSectionGrid, Title, Description, GetInTouchForm,
-    IframeSectionContainer, ContactSectionContainer, ContactSectionGrid,
-    SectionContainer, SectionWrapper,
+    Title, Description, GetInTouchForm,
+    ContactSectionContainer, ContactSectionGrid,
+    SectionContainer, SectionWrapper, ComponentsLibraryContainer,
 };

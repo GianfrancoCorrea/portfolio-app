@@ -5,7 +5,7 @@ import {
 
 function ContactSection() {
     return (
-        <ContactSectionContainer className="ContactSectionContainer">
+        <ContactSectionContainer>
             <SectionContainer>
                 <SectionWrapper>
                     <ContactSectionGrid>

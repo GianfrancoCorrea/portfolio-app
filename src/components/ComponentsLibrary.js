@@ -1,4 +1,4 @@
-function Iframe({ source, width, height }) { // eslint-disable-line
+function ComponentsLibrary({ source, width, height }) { // eslint-disable-line
     if (!source) {
         return <div>Loading...</div>;
     }
@@ -9,4 +9,4 @@ function Iframe({ source, width, height }) { // eslint-disable-line
     );
 }
 
-export default Iframe;
+export default ComponentsLibrary;

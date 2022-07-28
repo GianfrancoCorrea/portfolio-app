@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { IframeSectionContainer, ContactSectionContainer } from './App.styles';
+import { ContactSectionContainer, ComponentsLibraryContainer } from './App.styles';
 
 const useTypingTextStyles = css`
 .word span {
@@ -37,8 +37,10 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
     transition: all 0.2s ease-in, color 0.2s ease-in;
+    margin: 0;
+    padding: 0;
   }
-  ${IframeSectionContainer},
+  ${ComponentsLibraryContainer},
   ${ContactSectionContainer} {
     background-color: ${({ theme }) => theme.bodyInverted};
     color: ${({ theme }) => theme.textInverted};

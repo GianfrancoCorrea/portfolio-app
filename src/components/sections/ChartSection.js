@@ -16,7 +16,7 @@ function ChartSection() {
     }, [btcPrices]);
 
     return (
-        <ChartSectionContainer className="ChartSectionContainer">
+        <ChartSectionContainer>
             <div>
                 <Title>
                     Charts

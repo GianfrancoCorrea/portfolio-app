@@ -3,18 +3,15 @@ import { SectionContainer, SectionWrapper } from '../../App.styles';
 
 function IntroSection() {
     return (
-        <SectionContainer className="SectionContaine">
+        <SectionContainer>
             <IconsBackground />
-            <SectionWrapper className="SectionWrapper">
-
+            <SectionWrapper>
                 <Introduction
                     name="Gianfranco"
                     descriptions={['web developer', 'crypto enthusiast']}
                 />
             </SectionWrapper>
-
         </SectionContainer>
-
     );
 }
 
