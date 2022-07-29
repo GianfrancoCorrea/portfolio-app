@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { HeadingXLarge, Text } from '@gianjsx/component-library/dist/esm/styles';
 import {
-    Title, Description, SectionContainer,
+    SectionContainer,
     SectionWrapper, ComponentsLibraryContainer,
 } from '../../App.styles';
 import ComponentsLibrary from '../ComponentsLibrary';
@@ -12,15 +13,15 @@ function ComponentsLibrarySection() {
                 <SectionWrapper>
                     <ComponentsLibraryGrid>
                         <div>
-                            <Title>
+                            <HeadingXLarge>
                                 Title
-                            </Title>
-                            <Description>
+                            </HeadingXLarge>
+                            <Text>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                 Donec euismod, nisl eget consectetur sagittis,
                                 nisl nunc consectetur nisi, euismod consectetur
                                 nisi nisl eget consectetur sagittis.
-                            </Description>
+                            </Text>
                         </div>
                         <ComponentsLibraryWrapper>
                             <ComponentsLibrary source="./build-sb/index.html" width="800" height="700" frameBorder="0" />

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Title, Description } from '../../App.styles';
+import { HeadingXLarge, Text } from '@gianjsx/component-library/dist/esm/styles';
 import { getBtcPrices } from '../../helpers/helpers';
 import Chart from '../Chart';
 
@@ -18,15 +18,15 @@ function ChartSection() {
     return (
         <ChartSectionContainer>
             <div>
-                <Title>
+                <HeadingXLarge>
                     Charts
-                </Title>
-                <Description>
+                </HeadingXLarge>
+                <Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Donec euismod, nisl eget consectetur sagittis,
                     nisl nunc consectetur nisi, euismod consectetur
                     nisi nisl eget consectetur sagittis.
-                </Description>
+                </Text>
             </div>
             {btcPrices ? <Chart prices={btcPrices} /> : <div /> }
         </ChartSectionContainer>

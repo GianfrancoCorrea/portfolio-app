@@ -1,6 +1,7 @@
+import { HeadingXLarge, Text } from '@gianjsx/component-library/dist/esm/styles';
 import {
-    SectionContainer, SectionWrapper, Description, GetInTouchForm,
-    Title, ContactSectionContainer, ContactSectionGrid,
+    SectionContainer, SectionWrapper, GetInTouchForm,
+    ContactSectionContainer, ContactSectionGrid,
 } from '../../App.styles';
 
 function ContactSection() {
@@ -18,14 +19,14 @@ function ContactSection() {
                             </div>
                         </GetInTouchForm>
                         <div>
-                            <Title>
+                            <HeadingXLarge>
                                 Get in touch
-                            </Title>
-                            <Description>
+                            </HeadingXLarge>
+                            <Text>
                                 Let&apos;s talk about everything!
                                 <br />
                                 Don&apos;t like forms? Send me an email. 👋
-                            </Description>
+                            </Text>
                         </div>
                     </ContactSectionGrid>
                 </SectionWrapper>

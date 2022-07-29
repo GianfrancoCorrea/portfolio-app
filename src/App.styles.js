@@ -26,19 +26,6 @@ const SectionWrapper = styled.div`
     text-align: left;
 `;
 
-const Title = styled.div`
-font-weight: 900;
-    font-size: 45px;
-    line-height: 1;
-    margin-bottom: 30px;
-`;
-
-const Description = styled.p`
-   -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-`;
-
 const GetInTouchForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -108,7 +95,7 @@ margin-top: 80px;
  `;
 
 export {
-    Title, Description, GetInTouchForm,
+    GetInTouchForm,
     ContactSectionContainer, ContactSectionGrid,
     SectionContainer, SectionWrapper, ComponentsLibraryContainer,
 };

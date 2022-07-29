@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { iconList } from '@gianjsx/component-library/dist/esm/helpers';
 import * as styles from '@gianjsx/component-library/dist/esm/styles';
 import Orderbook from '../Orderbook';
-import { Description, Title } from '../../App.styles';
 import TokenPairsCards from '../TokenPairsCards';
 import { apiGet } from '../../helpers/helpers';
 import { connect, L2_ORDER_BOOK, TICKER } from '../../helpers/backend';
@@ -86,15 +85,15 @@ function BlockchainSection() {
                 {L2 ? <Orderbook orders={L2} /> : <div /> }
 
                 <div>
-                    <Title>
+                    <styles.HeadingXLarge>
                         Blockchain data (API & WebSockets)
-                    </Title>
-                    <Description>
+                    </styles.HeadingXLarge>
+                    <styles.Text>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Donec euismod, nisl eget consectetur sagittis,
                         nisl nunc consectetur nisi, euismod consectetur
                         nisi nisl eget consectetur sagittis.
-                    </Description>
+                    </styles.Text>
 
                     <BackchainDataIcons />
 
