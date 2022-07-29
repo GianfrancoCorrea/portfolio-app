@@ -1,10 +1,22 @@
 import styled from 'styled-components';
-import { HeadingXLarge, Text } from '@gianjsx/component-library/dist/esm/styles';
+import { HeadingXLarge, Text, Button } from '@gianjsx/component-library/dist/esm/styles';
 import {
     SectionContainer,
     SectionWrapper, ComponentsLibraryContainer,
 } from '../../App.styles';
 import ComponentsLibrary from '../ComponentsLibrary';
+
+const StorybookButton = styled(Button)`
+    background: #FF4785;
+    color: #ffffff;
+    margin-top: 20px;
+
+    &:hover {
+        color: #ffffff;
+        background: #E84179;
+    }
+
+`;
 
 function ComponentsLibrarySection() {
     return (
@@ -22,6 +34,9 @@ function ComponentsLibrarySection() {
                                 nisl nunc consectetur nisi, euismod consectetur
                                 nisi nisl eget consectetur sagittis.
                             </Text>
+                            <StorybookButton as="a" href="https://storybook.js.org/">
+                                Ver componentes
+                            </StorybookButton>
                         </div>
                         <ComponentsLibraryWrapper>
                             <ComponentsLibrary source="./build-sb/index.html" width="800" height="700" frameBorder="0" />

@@ -44,20 +44,7 @@ const GetInTouchForm = styled.form`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-rendering: optimizeLegibility;
-    }
-    /* button styles */
-    .button {
-        width: 50%;
-        height: 50px;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-        font-size: 1.5em;
-        text-align: center;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
+    }    
     textarea {
         width: 50%;
         height: 50px;

@@ -1,4 +1,4 @@
-import { HeadingXLarge, Text } from '@gianjsx/component-library/dist/esm/styles';
+import { HeadingXLarge, Text, Button } from '@gianjsx/component-library/dist/esm/styles';
 import {
     SectionContainer, SectionWrapper, GetInTouchForm,
     ContactSectionContainer, ContactSectionGrid,
@@ -15,7 +15,7 @@ function ContactSection() {
                                 <input type="text" className="input" placeholder="Name" />
                                 <input type="email" className="input" placeholder="Email" />
                                 <textarea placeholder="Message" />
-                                <button type="button" className="button">Send</button>
+                                <Button type="button">Send</Button>
                             </div>
                         </GetInTouchForm>
                         <div>
