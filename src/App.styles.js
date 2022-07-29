@@ -31,32 +31,7 @@ const GetInTouchForm = styled.form`
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* input styles */
-    .input {
-        width: 50%;
-        height: 50px;
-        border: 1px solid;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-        font-size: 1.5em;
-        text-align: center;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }    
-    textarea {
-        width: 50%;
-        height: 50px;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px;
-        font-size: 1.5em;
-        text-align: center;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-rendering: optimizeLegibility;
-    }
+    
     `;
 
 const ContactSectionContainer = styled.div`
