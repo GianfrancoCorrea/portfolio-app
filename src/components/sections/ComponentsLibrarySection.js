@@ -34,12 +34,21 @@ function ComponentsLibrarySection() {
                                 nisl nunc consectetur nisi, euismod consectetur
                                 nisi nisl eget consectetur sagittis.
                             </Text>
-                            <StorybookButton as="a" href="https://storybook.js.org/">
+                            <StorybookButton
+                                as="a"
+                                href="https://storybook.js.org/"
+                                traget="_blank"
+                            >
                                 Ver componentes
                             </StorybookButton>
                         </div>
                         <ComponentsLibraryWrapper>
-                            <ComponentsLibrary source="./build-sb/index.html" width="800" height="700" frameBorder="0" />
+                            <ComponentsLibrary
+                                source="./build-sb/index.html"
+                                width="100%"
+                                height="600px"
+                                frameBorder="0"
+                            />
                         </ComponentsLibraryWrapper>
                     </ComponentsLibraryGrid>
                 </SectionWrapper>

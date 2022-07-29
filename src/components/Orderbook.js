@@ -39,59 +39,55 @@ function Orderbook({ orders: { bids, asks } }) {
             <div style={{ display: 'flex' }}>
                 <Card
                     title="Bitcoin Bids orderbook"
-                    content={(
-                        <div style={{ display: 'flex' }}>
-                            <table className="table-orderbook">
-                                <tbody>
-                                    <tr>
-                                        <td>Price</td>
-                                        <td>qty</td>
-                                        <td>total</td>
-                                    </tr>
-                                    {
-                                        parsedOrders?.bids.map((x, i) => (
-                                            <tr style={bidStyle(x, totalBids)} key={String(`bid_${i}`)}>
-                                                <td>{x.price}</td>
-                                                <td>{x.qty}</td>
-                                                <td>{x.total}</td>
-                                            </tr>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
+                    className="orderbook-card"
+                >
+                    <div style={{ display: 'flex' }}>
+                        <table className="table-orderbook">
+                            <tbody>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>qty</td>
+                                    <td>total</td>
+                                </tr>
+                                {
+                                    parsedOrders?.bids.map((x, i) => (
+                                        <tr style={bidStyle(x, totalBids)} key={String(`bid_${i}`)}>
+                                            <td>{x.price}</td>
+                                            <td>{x.qty}</td>
+                                            <td>{x.total}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
 
-                        </div>
-                    )}
-                    largePadding
-                    className={'orderbook-card'}
-                />
+                    </div>
+                </Card>
                 <Card
                     title="Bitcoin Asks orderbook"
-                    content={(
-                        <div style={{ display: 'flex' }}>
-                            <table className="table-orderbook">
-                                <tbody>
-                                    <tr>
-                                        <td>Price</td>
-                                        <td>qty</td>
-                                        <td>total</td>
-                                    </tr>
-                                    {
-                                        parsedOrders?.asks.map((x, i) => (
-                                            <tr style={askStyle(x, totalAsks)} key={String(`ask_${i}`)}>
-                                                <td>{x.price}</td>
-                                                <td>{x.qty}</td>
-                                                <td>{x.total}</td>
-                                            </tr>
-                                        ))
-                                    }
-                                </tbody>
-                            </table>
-                        </div>
-                    )}
-                    largePadding
-                    className={'orderbook-card'}
-                />
+                    className="orderbook-card"
+                >
+                    <div style={{ display: 'flex' }}>
+                        <table className="table-orderbook">
+                            <tbody>
+                                <tr>
+                                    <td>Price</td>
+                                    <td>qty</td>
+                                    <td>total</td>
+                                </tr>
+                                {
+                                    parsedOrders?.asks.map((x, i) => (
+                                        <tr style={askStyle(x, totalAsks)} key={String(`ask_${i}`)}>
+                                            <td>{x.price}</td>
+                                            <td>{x.qty}</td>
+                                            <td>{x.total}</td>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </Card>
             </div>
         </div>
     );
