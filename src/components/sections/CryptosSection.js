@@ -2,7 +2,7 @@ import { SectionContainer, SectionWrapper } from '../../App.styles';
 import BlockchainSection from './BlockchainSection';
 import ChartSection from './ChartSection';
 
-function CryposSection() {
+function CryptosSection() {
     return (
         <SectionContainer>
             <SectionWrapper>
@@ -12,4 +12,4 @@ function CryposSection() {
         </SectionContainer>
     );
 }
-export default CryposSection;
+export default CryptosSection;

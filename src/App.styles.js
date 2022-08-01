@@ -49,15 +49,14 @@ display: grid;
 
 const ComponentsLibraryContainer = styled.div`
 margin-top: 80px;
-   ${SectionContainer} {
+
+${SectionContainer} {
     padding: 0;
 }
-
-
- `;
+`;
 
 export {
-    GetInTouchForm,
+    GetInTouchForm, ComponentsLibraryContainer,
     ContactSectionContainer, ContactSectionGrid,
-    SectionContainer, SectionWrapper, ComponentsLibraryContainer,
+    SectionContainer, SectionWrapper,
 };

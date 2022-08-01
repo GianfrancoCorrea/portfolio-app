@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { PriceCard } from '@gianjsx/component-library';
 
 function TokenPairsCards({ tokenPairs }) {
     return (
-        <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <TokenPairsCardsGrid>
             {tokenPairs.map(({ token, price, name }) => (
                 <PriceCard
                     key={token}
@@ -13,11 +14,17 @@ function TokenPairsCards({ tokenPairs }) {
                 />
             ))}
 
-        </div>
+        </TokenPairsCardsGrid>
     );
 }
 
 export default TokenPairsCards;
+
+const TokenPairsCardsGrid = styled.div` 
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+`;
 
 TokenPairsCards.propTypes = {
     tokenPairs: PropTypes.arrayOf(PropTypes.shape({
