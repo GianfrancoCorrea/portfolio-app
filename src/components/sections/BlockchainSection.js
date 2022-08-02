@@ -8,14 +8,6 @@ import { apiGet } from '../../helpers/helpers';
 import { connect, L2_ORDER_BOOK, TICKER } from '../../helpers/backend';
 import getTokenPairs from '../../helpers/tokenPairs';
 
-const BlockchainSectionContainer = styled.div`
-   display: grid;
-    grid-template-columns: 6fr 4fr;
-    grid-gap: 1em;
-    align-items: center;
-
-`;
-
 function BackchainDataIcons() {
     const [icons, setIcons] = useState([]);
     const {
@@ -81,9 +73,7 @@ function BlockchainSection() {
         <>
             <TokenPairsCards tokenPairs={tokenPairs} />
             <BlockchainSectionContainer>
-
                 {L2 ? <Orderbook orders={L2} /> : <div /> }
-
                 <div>
                     <styles.HeadingXLarge>
                         Blockchain data (API & WebSockets)
@@ -94,14 +84,19 @@ function BlockchainSection() {
                         nisl nunc consectetur nisi, euismod consectetur
                         nisi nisl eget consectetur sagittis.
                     </styles.Text>
-
                     <BackchainDataIcons />
-
                 </div>
-
             </BlockchainSectionContainer>
         </>
     );
 }
+
+const BlockchainSectionContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+    margin-top: 60px;
+`;
 
 export default BlockchainSection;

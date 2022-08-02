@@ -39,5 +39,6 @@ const ChartSectionContainer = styled.div`
     grid-template-columns: 4fr 6fr;
     grid-gap: 1em;
     align-items: center;
+    margin-top: 60px;
 
 `;

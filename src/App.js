@@ -5,7 +5,6 @@ import ContactSection from './components/sections/ContactSection';
 import ComponentsLibrarySection from './components/sections/ComponentsLibrarySection';
 import IntroSection from './components/sections/IntroSection';
 import { lightTheme, darkTheme, GlobalStyles } from './theme';
-import './App.less';
 
 function App() {
     const [theme, setTheme] = useState('dark');

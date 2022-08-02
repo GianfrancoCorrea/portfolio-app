@@ -1,4 +1,6 @@
+import { Table, TableHead, TableCell } from '@gianjsx/component-library/dist/esm/styles';
 import { Card } from '@gianjsx/component-library';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import { askStyle, bidStyle, parseOrders, groupByPrice } from '../helpers/helpers';
@@ -32,68 +34,61 @@ function Orderbook({ orders: { bids, asks } }) {
         <div>
             Group by:
             <div style={{ display: 'flex' }}>
-                <p onClick={() => handleGroupByPrice(50)} aria-hidden="true">&nbsp; 50 &nbsp;</p>
-                <p onClick={() => handleGroupByPrice(100)} aria-hidden="true">&nbsp; 100 &nbsp;</p>
-                <p onClick={() => handleGroupByPrice(500)} aria-hidden="true">&nbsp; 500 &nbsp;</p>
+                <p onClick={() => handleGroupByPrice(50)} aria-hidden="true">50</p>
+                <p onClick={() => handleGroupByPrice(100)} aria-hidden="true">100</p>
+                <p onClick={() => handleGroupByPrice(500)} aria-hidden="true">500</p>
             </div>
-            <div style={{ display: 'flex' }}>
-                <Card
-                    title="Bitcoin Bids orderbook"
-                    className="orderbook-card"
-                >
-                    <div style={{ display: 'flex' }}>
-                        <table className="table-orderbook">
-                            <tbody>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>qty</td>
-                                    <td>total</td>
+            <OrderbookTablesWrapper>
+                <Card title="Bitcoin Bids orderbook">
+                    <Table>
+                        <thead>
+                            <tr>
+                                <TableHead>Price</TableHead>
+                                <TableHead>qty</TableHead>
+                                <TableHead>total</TableHead>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            { parsedOrders?.bids.map((x, i) => (
+                                <tr style={bidStyle(x, totalBids)} key={String(`bid_${i}`)}>
+                                    <TableCell>{x.price}</TableCell>
+                                    <TableCell>{x.qty}</TableCell>
+                                    <TableCell>{x.total}</TableCell>
                                 </tr>
-                                {
-                                    parsedOrders?.bids.map((x, i) => (
-                                        <tr style={bidStyle(x, totalBids)} key={String(`bid_${i}`)}>
-                                            <td>{x.price}</td>
-                                            <td>{x.qty}</td>
-                                            <td>{x.total}</td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-
-                    </div>
+                            )) }
+                        </tbody>
+                    </Table>
                 </Card>
-                <Card
-                    title="Bitcoin Asks orderbook"
-                    className="orderbook-card"
-                >
-                    <div style={{ display: 'flex' }}>
-                        <table className="table-orderbook">
-                            <tbody>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>qty</td>
-                                    <td>total</td>
+                <Card title="Bitcoin Asks orderbook">
+                    <Table>
+                        <thead>
+                            <tr>
+                                <TableHead>Price</TableHead>
+                                <TableHead>qty</TableHead>
+                                <TableHead>total</TableHead>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            { parsedOrders?.asks.map((x, i) => (
+                                <tr style={askStyle(x, totalAsks)} key={String(`ask_${i}`)}>
+                                    <TableCell>{x.price}</TableCell>
+                                    <TableCell>{x.qty}</TableCell>
+                                    <TableCell>{x.total}</TableCell>
                                 </tr>
-                                {
-                                    parsedOrders?.asks.map((x, i) => (
-                                        <tr style={askStyle(x, totalAsks)} key={String(`ask_${i}`)}>
-                                            <td>{x.price}</td>
-                                            <td>{x.qty}</td>
-                                            <td>{x.total}</td>
-                                        </tr>
-                                    ))
-                                }
-                            </tbody>
-                        </table>
-                    </div>
+                            )) }
+                        </tbody>
+                    </Table>
                 </Card>
-            </div>
+            </OrderbookTablesWrapper>
         </div>
     );
 }
 
-export default Orderbook;
+const OrderbookTablesWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+`;
 
 Orderbook.propTypes = {
     orders: PropTypes.shape({
@@ -107,3 +102,5 @@ Orderbook.propTypes = {
         })).isRequired,
     }).isRequired,
 };
+
+export default Orderbook;

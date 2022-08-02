@@ -26,26 +26,9 @@ const SectionWrapper = styled.div`
     text-align: left;
 `;
 
-const GetInTouchForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    
-    `;
-
 const ContactSectionContainer = styled.div`
-   width: 100%;
-    `;
-
-const ContactSectionGrid = styled.div`
-display: grid;
- grid-template-columns: 1fr 4fr 6fr 1fr;
- grid-gap: 1em;
- align-items: center;
- width: 100%;
- opacity: 1;
- `;
+    width: 100%;
+`;
 
 const ComponentsLibraryContainer = styled.div`
 margin-top: 80px;
@@ -56,7 +39,6 @@ ${SectionContainer} {
 `;
 
 export {
-    GetInTouchForm, ComponentsLibraryContainer,
-    ContactSectionContainer, ContactSectionGrid,
+    ComponentsLibraryContainer, ContactSectionContainer,
     SectionContainer, SectionWrapper,
 };

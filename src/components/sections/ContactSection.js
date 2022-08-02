@@ -1,26 +1,16 @@
 import {
     HeadingXLarge, Text, Button, Input, TextArea,
 } from '@gianjsx/component-library/dist/esm/styles';
-import {
-    SectionContainer, SectionWrapper, GetInTouchForm,
-    ContactSectionContainer, ContactSectionGrid,
-} from '../../App.styles';
+import styled from 'styled-components';
+import { SectionContainer, SectionWrapper, ContactSectionContainer } from '../../App.styles';
 
 function ContactSection() {
     return (
         <ContactSectionContainer>
             <SectionContainer>
-                <SectionWrapper>
+                <ContactSectionWrapper>
                     <ContactSectionGrid>
-                        <GetInTouchForm>
-                            <div>
-                                <Input type="text" placeholder="Name" />
-                                <Input type="email" placeholder="Email" />
-                                <TextArea placeholder="Message" />
-                                <Button type="button">Send</Button>
-                            </div>
-                        </GetInTouchForm>
-                        <div>
+                        <ContactSectionTextWrapper>
                             <HeadingXLarge>
                                 Get in touch
                             </HeadingXLarge>
@@ -29,13 +19,42 @@ function ContactSection() {
                                 <br />
                                 Don&apos;t like forms? Send me an email. 👋
                             </Text>
-                        </div>
+                        </ContactSectionTextWrapper>
+                        <GetInTouchForm>
+                            <Input type="text" placeholder="Name" />
+                            <Input type="email" placeholder="Email" />
+                            <TextArea placeholder="Message" />
+                            <Button type="button">Send</Button>
+                        </GetInTouchForm>
                     </ContactSectionGrid>
-                </SectionWrapper>
+                </ContactSectionWrapper>
             </SectionContainer>
         </ContactSectionContainer>
 
     );
 }
+
+const ContactSectionWrapper = styled(SectionWrapper)`
+    text-align: center;
+`;
+
+const ContactSectionGrid = styled.div`
+    display: grid;
+    grid-template-columns: auto 400px;
+    justify-content: space-around;
+    grid-gap: 80px;
+    width: max-content;
+    margin: 0 auto;
+`;
+
+const ContactSectionTextWrapper = styled.div` 
+    text-align: right;
+`;
+
+const GetInTouchForm = styled.form`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+`;
 
 export default ContactSection;
