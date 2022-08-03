@@ -8,6 +8,10 @@
     "browser": true
   },
   "rules": {
+    "react/no-unstable-nested-components": [
+      "off",
+      { "allowAsProps": true }
+    ],
     "react/jsx-indent" : ["error", 4],
     "indent": ["warn", 4, { "SwitchCase": 1 }],
     "padded-blocks": [
