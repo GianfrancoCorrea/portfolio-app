@@ -20,11 +20,11 @@ function BackchainDataIcons() {
         }
     }, [icons, setIcons, tecnologies]);
     return (
-        <styles.IconsContainer>
+        <div>
             {icons.map((icon) => (
                 <icon.icon key={`key_${icon.name}`} />
             ))}
-        </styles.IconsContainer>
+        </div>
     );
 }
 
