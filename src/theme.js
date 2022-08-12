@@ -3,7 +3,7 @@ import { ContactSectionContainer, ComponentsLibraryContainer } from './App.style
 
 const useTypingTextStyles = css`
 .word span {
-  color: #38FF58;
+  color: ${({ theme }) => theme.accentColor};
   position: relative;
 }
 
@@ -52,10 +52,12 @@ export const lightTheme = {
     text         : '#222222',
     bodyInverted : '#222222',
     textInverted : '#ffffff',
+    accentColor  : '#38FF58',
 };
 export const darkTheme = {
     body         : '#222222',
     text         : '#ffffff',
     bodyInverted : '#f4f4f4',
     textInverted : '#222222',
+    accentColor  : '#38FF58',
 };
