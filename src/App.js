@@ -47,7 +47,7 @@ function App() {
                     {/* <Test /> i18n test */}
                     <IntroSection />
                     <ComponentsLibrarySection />
-                    <CryptosSection />
+                    <CryptosSection darkTheme={isDarkTheme} />
                     <ContactSection />
                 </IntlProvider>
             </>

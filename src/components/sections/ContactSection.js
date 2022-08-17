@@ -54,7 +54,7 @@ const ContactSectionTextWrapper = styled.div`
 const GetInTouchForm = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px;    
+    gap: 10px;    
 `;
 
 export default ContactSection;

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { iconList } from '@gianjsx/component-library/dist/esm/helpers';
 import * as styles from '@gianjsx/component-library/dist/esm/styles';
@@ -20,15 +21,15 @@ function BackchainDataIcons() {
         }
     }, [icons, setIcons, tecnologies]);
     return (
-        <div>
+        <BlockchainDataIconsWrapper>
             {icons.map((icon) => (
                 <icon.icon key={`key_${icon.name}`} />
             ))}
-        </div>
+        </BlockchainDataIconsWrapper>
     );
 }
 
-function BlockchainSection() {
+function BlockchainSection({ darkTheme }) {
     const [L2, setL2] = useState(null);
     const [tokenPrices, setTokenPrices] = useState({
         'BTC-USD' : 0,
@@ -71,9 +72,18 @@ function BlockchainSection() {
 
     return (
         <>
+            <TokenPairsIntro>
+                <styles.HeadingXLarge>
+                    Lorem ipsum
+                </styles.HeadingXLarge>
+                <styles.Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec euismod, nisl eget consectetur sagittis.
+                </styles.Text>
+            </TokenPairsIntro>
             <TokenPairsCards tokenPairs={tokenPairs} />
             <BlockchainSectionContainer>
-                {L2 ? <Orderbook orders={L2} /> : <div /> }
+                {L2 ? <Orderbook isDarkTheme={darkTheme} orders={L2} /> : <div /> }
                 <div>
                     <styles.HeadingXLarge>
                         Blockchain data (API & WebSockets)
@@ -91,12 +101,47 @@ function BlockchainSection() {
     );
 }
 
+BlockchainSection.propTypes = {
+    darkTheme: PropTypes.bool.isRequired,
+};
+
+export default BlockchainSection;
+
+const TokenPairsIntro = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 60px;    
+    align-items: center;
+
+    ${styles.HeadingXLarge},
+    ${styles.Text} {
+        max-width: 600px;
+        text-align: center;
+    }
+`;
+
 const BlockchainSectionContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 100px;
+    text-align: center;
 `;
 
-export default BlockchainSection;
+const BlockchainDataIconsWrapper = styled.div`
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 60px;
+    margin-top: 40px;
+
+    svg {
+        height: 30px;
+        margin: 0 auto;
+    }
+
+`;

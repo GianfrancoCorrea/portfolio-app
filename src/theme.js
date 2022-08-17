@@ -53,6 +53,7 @@ export const lightTheme = {
     bodyInverted : '#222222',
     textInverted : '#ffffff',
     accentColor  : '#38FF58',
+    borderColor  : 'rgba(0, 0, 0, .1)',
 };
 export const darkTheme = {
     body         : '#222222',
@@ -60,4 +61,5 @@ export const darkTheme = {
     bodyInverted : '#f4f4f4',
     textInverted : '#222222',
     accentColor  : '#38FF58',
+    borderColor  : 'rgba(255, 255, 255, .5)',
 };

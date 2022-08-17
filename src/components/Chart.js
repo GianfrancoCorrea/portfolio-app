@@ -2,7 +2,7 @@ import { createChart, CrosshairMode } from 'lightweight-charts';
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 // import priceData from '../helpers/data/priceData';
-import { useTheme } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 import volumeData from '../helpers/data/volumeData';
 
 export default function Chart({ prices }) {
@@ -89,8 +89,7 @@ export default function Chart({ prices }) {
     }, []); */
 
     return (
-
-        <div
+        <StyledChart
             ref={chartContainerRef}
             className="chart-container"
             style={{ width: '100%' }}
@@ -98,6 +97,11 @@ export default function Chart({ prices }) {
 
     );
 }
+
+const StyledChart = styled.div`
+    border-radius: 4px;
+    overflow: hidden;
+`;
 
 Chart.propTypes = {
     prices: PropTypes.arrayOf(PropTypes.shape({
